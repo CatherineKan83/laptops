@@ -125,17 +125,21 @@ public class Request{
         printSet(laptops);
     }
     static Set<String>laptops= new HashSet<>();
-    static void printSet(Set<Laptop>set){
+    static void printSet(Set<Laptop>set) {
         List<String> a = Menu.menu();
-        for(Laptop laptop:set){
+        for (Laptop laptop : set) {
             String b = String.valueOf(laptop);
             for (String s : a) {
                 if (b.contains(s)) {
-                    laptops.add(laptop+"\n");
+                    laptops.add(laptop + "\n");
                 }
             }
         }
-        System.out.print(String.valueOf(laptops).replace("[","").replace("]","").replace(",",""));
+        if (laptops.isEmpty()) {
+            System.out.print("По вашему запросу ничего не найдено.");
+        } else {
+            System.out.print(String.valueOf(laptops).replace("[", "").replace("]", "").replace(",", ""));
+        }
     }
 }
 
