@@ -126,14 +126,19 @@ public class Request{
     }
     static Set<String>laptops= new HashSet<>();
     static void printSet(Set<Laptop>set) {
+        int check = 0;
         List<String> a = Menu.menu();
         for (Laptop laptop : set) {
             String b = String.valueOf(laptop);
             for (String s : a) {
                 if (b.contains(s)) {
-                    laptops.add(laptop + "\n");
+                    check+=1;
+                    if(check==a.size()) {
+                        laptops.add(laptop + "\n");
+                    }
                 }
             }
+            check=0;
         }
         if (laptops.isEmpty()) {
             System.out.print("По вашему запросу ничего не найдено.");
@@ -142,5 +147,3 @@ public class Request{
         }
     }
 }
-
-
