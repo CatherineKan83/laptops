@@ -109,6 +109,7 @@ public class Request{
         laptop9.series = XiaomiSeries[0];
         laptop9.OZU = OZU[1];
         laptop9.HDD = HDD[1];
+        laptop8.OS = OS[7];
         laptop9.color = color[1];
 
         Set<Laptop>laptops = new HashSet<>();
